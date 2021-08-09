@@ -37,7 +37,4 @@ jobs:
         run: npm ci
 
       - name: Run test against code
-        run: npm run test:ci
-
-      - name: Lint code for code-style errors
-        run: npm run lint
+        run: npm test
