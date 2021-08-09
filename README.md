@@ -1,111 +1,29 @@
-<p align="center"><a href="https://darkreader.org" target="_blank" rel="noreferrer noopener"><img width="250" alt="Dark Reader's mascot" src="https://raw.githubusercontent.com/darkreader/darkreader.github.io/master/images/darkreader-mascot.svg"></a></p>
-<p align="center">Dark Reader <strong>analyzes</strong> web pages and aims to <strong>reduce the eyestrain</strong> while you browse the web.</p>
-<br/>
-<p align="center"><a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh/"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://addons.mozilla.org/firefox/addon/darkreader/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc/"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>  <a el="noreferrer noopener" href="https://addons.thunderbird.net/thunderbird/addon/darkreader"><img alt="Thunderbird" src="https://img.shields.io/badge/Thunderbird-141e24.svg?&style=for-the-badge&logo=thunderbird&logoColor=white"></a>
+# Translations for [Dark Reader](https://github.com/darkreader/darkreader/)
 
-<h2 align="center">Dark Reader</h2>
-<br/>
-<p align="center">Dark Reader is an <strong>open-source</strong> MIT-licensed <strong>browser extension</strong> that is designed to analyze web pages. Based on its analysis, Dark Reader will generate a dark mode that aims to <strong>reduce the eyestrain</strong> of the user. Dark Reader is <strong>feature-rich</strong> and can be configured in many ways throughout the UI.</p>
-<br/>
-<br/>
+### How to improve a translation
+- Open [locales folder](https://github.com/darkreader/darkreader/tree/master/src/_locales).
+- Find a language code you know.
+- Edit messages directly on GitHub (or on local machine if you are familiar with Git) under `@message_id`. Please, preserve the lines count.
+- Submit a pull request.
 
-## Questions
+### How to add a new translation
+- Leave a comment that you are going to add a new translation, check that somebody else has not started it yet.
+- See the list of [supported Chrome locales](https://developer.chrome.com/webstore/i18n#localeTable).
+- Download [English locale](https://raw.githubusercontent.com/darkreader/darkreader/master/src/_locales/en.config).
+- Rename the file into corresponding language code (use dashes for file name if necessary, e.g. `zh-TW.config`.
+- Edit messages under `@message_id`. Please, preserve the lines count.
+- Open [locales folder](https://github.com/darkreader/darkreader/tree/master/src/_locales).
+- Click **Create new file** or **Upload files**.
+- Submit a pull request.
 
-Most questions can be answered by reading the [help page](https://darkreader.org/help/).
-If the help page doesn't answer your question, open up an [issue](https://github.com/darkreader/darkreader/issues/new/) and choose the template 'Question' and fill out the necessary info. 
+### Help page translations
+- Help page translations are listed [here](https://github.com/darkreader/darkreader.org/blob/master/src/help/topics).
+- Follow the same steps described above.
 
-## How to contribute
+## Contributors
 
-Read more about contributing to Dark Reader in [CONTRIBUTING.md](https://github.com/darkreader/darkreader/blob/master/CONTRIBUTING.md).
+### Dark Reader exists thanks to all the people who have contributed to Dark Reader!
 
-## Building for use
-
-You can install the extension from a file.  
-Install [Node.js LTS](https://nodejs.org/en/). Download the source code (or check out from git).  
-Open terminal in the root folder and run:  
-
-- `npm install`  
-- `npm run build`  
-
-This will generate a `build.zip` file that is useable in a Chromium-based browser and also a `build-firefox.xpi` file that is useable in Firefox.
-
-## Using Dark Reader for a website
-
-You can use Dark Reader to enable dark mode on your website!
-
-- Install the package from NPM (`npm install darkreader`)
-- or build from the source code (`npm run api`)
-- or include the script via a CDN such as [unpkg](https://unpkg.com/darkreader/) or [jsDelivr](https://www.jsdelivr.com/package/npm/darkreader)
-
-Then you can use the following code to control Dark Reader's API
-```javascript
-DarkReader.enable({
-    brightness: 100,
-    contrast: 90,
-    sepia: 10
-});
-
-DarkReader.disable();
-
-// Enable when the system color scheme is dark.
-DarkReader.auto({
-    brightness: 100,
-    contrast: 90,
-    sepia: 10
-});
-
-// Stop watching for the system color scheme.
-DarkReader.auto(false);
-
-// Get the generated CSS of Dark Reader returned as a string.
-const CSS = await DarkReader.exportGeneratedCSS();
-
-// Check if Dark Reader is enabled.
-const isEnabled = DarkReader.isEnabled();
-```
-
-... or if you are using ES modules
-
-```javascript
-import {
-    enable as enableDarkMode,
-    disable as disableDarkMode,
-    auto as followSystemColorScheme,
-    exportGeneratedCSS as collectCSS,
-    isEnabled as isDarkReaderEnabled
-} from 'darkreader';
-
-enableDarkMode({
-    brightness: 100,
-    contrast: 90,
-    sepia: 10,
-});
-
-disableDarkMode();
-
-followSystemColorScheme();
-
-const CSS = await collectCSS();
-
-const isEnabled = isDarkReaderEnabled();
-```
-
-## Site fixes
-
-Automatically syncing the site fixes to every Dark Reader user was disabled because the GitHub team doesn't allow using GitHub as a CDN. Storing these files and making requests to other resources would be expensive and look suspicious. As such, changes are included with each new Dark Reader release.
-
-However, this can be enabled by the following steps:
-
-- Click on the Dark Reader icon.
-- Click on the Dev tools button (in the bottom-right corner).
-- Click on the Preview new design button.
-- Enable the `Synchronize site fixes` setting, under `Settings -> Manage Settings`.
-
-<h2 align="center">Contributors</h2>
-<br/>
-<h3 align="center"><strong>Dark Reader exists thanks to all the people who have contributed to Dark Reader!</strong></h3>
-<br/>
-<br/>
 <p align="center"><a rel="noreferrer noopener" href="https://github.com/darkreader/darkreader/graphs/contributors/"><img src="https://opencollective.com/darkreader/contributors.svg?width=890&button=false"/></a></p>
 
 <h2 align="center">Backers</h2>
