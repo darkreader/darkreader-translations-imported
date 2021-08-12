@@ -1,5 +1,19 @@
 // @ts-check
 const fs = require('fs/promises');
+const exists = require('fs').existsSync;
+const path = require('path');
+
+/**
+ * @param {string} filePath
+ * @param {string} content
+ */
+async function writeFile(filePath, content) {
+    const dir = path.dirname(filePath);
+    if (!exists(dir)) {
+        await fs.mkdir(dir, {recursive: true});
+    }
+    await fs.writeFile(filePath, content);
+}
 
 /**
  * @param {string} filePath
@@ -38,7 +52,7 @@ async function bundleLocale(filePath, outputPathOrPaths) {
         const result = outputPathOrPaths(locale);
         outputPaths = Array.isArray(result) ? result : [result];
     }
-    await Promise.all(outputPaths.map((p) => fs.writeFile(p, json)));
+    await Promise.all(outputPaths.map((p) => writeFile(p, json)));
 }
 
 /**
